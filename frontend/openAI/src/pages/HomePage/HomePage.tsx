@@ -1,3 +1,9 @@
+import TopSection from "./childComponent/TopSection";
+
 export default function HomePage() {
-  return <div>HomePage</div>;
+  return (
+    <div>
+      <TopSection />
+    </div>
+  );
 }

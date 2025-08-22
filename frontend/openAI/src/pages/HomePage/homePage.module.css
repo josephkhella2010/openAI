@@ -1,0 +1,37 @@
+.topSectionContainer {
+  width: 100%;
+  height: 60px;
+  border-bottom: 1px solid rgb(153, 153, 153);
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+.logoSection {
+  width: 100px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logoSection img {
+  width: 90px;
+  height: 90%;
+}
+.textLogo {
+  width: 100%;
+  display: flex;
+  gap: 10px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+.textLogo p:nth-child(2) {
+  color: red;
+}
+@media screen and (max-width: 850px) {
+  .textLogo {
+    flex-direction: column;
+    gap: 5px;
+    font-size: 12px;
+  }
+}
