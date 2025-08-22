@@ -1,3 +1,14 @@
+.HomePageWrapper {
+  position: relative;
+  min-height: 100dvh;
+  background-color: cyan;
+}
+.HomePageTop {
+  background-color: coral;
+  padding-bottom: 100px;
+  overflow: auto;
+  height: 100dvh;
+}
 .topSectionContainer {
   width: 100%;
   height: 60px;
@@ -28,10 +39,141 @@
 .textLogo p:nth-child(2) {
   color: red;
 }
+
+/*  */
+.startConversationContainer {
+  width: 100%;
+  padding: 50px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.startConversationSection {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+.startConversationIcon {
+  color: rgb(97, 97, 97);
+
+  font-size: 70px;
+}
+.startConversationSection p:nth-of-type(1) {
+  color: rgb(97, 97, 97);
+  font-size: 20px;
+}
+.startConversationSection p:nth-of-type(2) {
+  color: rgb(149, 149, 149);
+  font-size: 20px;
+}
+/*  */
+
+/* ai messages */
+.aiMessagesContainer {
+  padding: 20px;
+}
+.aiMessagesSection {
+  background-color: blue;
+  padding: 20px;
+  width: 60%;
+  display: flex;
+  gap: 20px;
+  border-radius: 20px;
+}
+.aiMessagesSection img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+.aiMessagesSection {
+  color: white;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+/*  */
+
+/* user message */
+.UserMessageContainer {
+  padding: 20px;
+}
+.UserMessageSection {
+  background-color: rgb(192, 10, 10);
+  padding: 20px;
+  width: 60%;
+  display: flex;
+  gap: 20px;
+  border-radius: 20px;
+}
+
+.UserMessageSection img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+.UserMessageSection {
+  color: white;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+/*  */
+
+/* user input */
+.UserInputContainer {
+  background-color: blueviolet;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+}
+.UserInputSection {
+  background-color: orange;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.UserInputSection input {
+  border: none;
+  height: 70px;
+  width: 60%;
+  border-radius: 40px;
+  padding: 10px;
+}
+.UserInputIconContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color: aliceblue;
+  padding: 10px;
+  cursor: pointer;
+}
+
+/*  */
+
 @media screen and (max-width: 850px) {
   .textLogo {
     flex-direction: column;
     gap: 5px;
     font-size: 12px;
+  }
+
+  .startConversationIcon {
+    font-size: 50px;
+  }
+  .startConversationSection p:nth-of-type(1) {
+    font-size: 15px;
+  }
+  .startConversationSection p:nth-of-type(2) {
+    font-size: 15px;
+  }
+  .aiMessagesSection {
+    width: 90%;
+  }
+  .UserMessageSection {
+    width: 90%;
   }
 }
