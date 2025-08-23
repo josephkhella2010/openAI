@@ -1,4 +1,4 @@
-import { createSlice, type PayloadAction } from "@reduxjs/toolkit";
+/* import { createSlice, type PayloadAction } from "@reduxjs/toolkit";
 import type { AiChatType, UserChatType } from "../helps/interfaceType";
 interface initType {
   AiChat: AiChatType[];
@@ -6,7 +6,7 @@ interface initType {
   isLoading: boolean;
 }
 const initialState: initType = {
-  AiChat: [],
+  AiChat: [{ AiChat: "Hi there! How are you today? How can I help you?" }],
   userChat: [],
   isLoading: false,
 };
@@ -40,4 +40,35 @@ export const {
   setAddUserChat,
   setIsLoading,
 } = ChatMessageSlice.actions;
+export default ChatMessageSlice.reducer;
+ */
+import { createSlice, type PayloadAction } from "@reduxjs/toolkit";
+import type { MessagesType } from "../helps/interfaceType";
+interface initType {
+  messages: MessagesType[];
+}
+const initialState: initType = {
+  messages: [
+    {
+      text: "Hi there! How are you today? How can I help you?",
+      sender: "ai",
+      isLoading: false,
+    },
+  ],
+};
+
+const ChatMessageSlice = createSlice({
+  name: "ChatMessageSlice",
+  initialState,
+  reducers: {
+    setMessagesChat: (state, action: PayloadAction<MessagesType[]>) => {
+      state.messages = action.payload;
+    },
+    setAddMessagesChat: (state, action: PayloadAction<MessagesType>) => {
+      state.messages.push(action.payload);
+    },
+  },
+});
+
+export const { setMessagesChat, setAddMessagesChat } = ChatMessageSlice.actions;
 export default ChatMessageSlice.reducer;

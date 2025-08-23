@@ -5,7 +5,7 @@
 }
 .HomePageTop {
   background-color: coral;
-  padding-bottom: 100px;
+  padding-bottom: 200px; /* 👈 extra space so last message is visible above input */
   overflow: auto;
   height: 100dvh;
 }
@@ -67,6 +67,7 @@
   color: rgb(149, 149, 149);
   font-size: 20px;
 }
+
 /*  */
 
 /* ai messages */
@@ -74,7 +75,6 @@
   padding: 20px;
 }
 .aiMessagesSection {
-  background-color: blue;
   padding: 20px;
   width: 60%;
   display: flex;
@@ -96,9 +96,12 @@
 /* user message */
 .UserMessageContainer {
   padding: 20px;
+  width: 60%;
+  display: flex;
+  gap: 20px;
+  border-radius: 20px;
 }
 .UserMessageSection {
-  background-color: rgb(192, 10, 10);
   padding: 20px;
   width: 60%;
   display: flex;
@@ -151,6 +154,23 @@
   padding: 10px;
   cursor: pointer;
 }
+.userMassegerWrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  gap: 20px;
+  width: 100%;
+}
+.aiBackground {
+  background-color: blue;
+}
+.userBackground {
+  background-color: rgb(192, 10, 10);
+}
+.UserMessageOutContainer {
+  width: 100%;
+  border-radius: 20px;
+}
 
 /*  */
 
@@ -173,7 +193,8 @@
   .aiMessagesSection {
     width: 90%;
   }
-  .UserMessageSection {
-    width: 90%;
+  .UserMessageSection,
+  .UserMessageContainer {
+    width: 100%;
   }
 }
