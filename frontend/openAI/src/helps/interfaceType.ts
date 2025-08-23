@@ -19,5 +19,4 @@ export interface UserChatType {
 export interface MessagesType {
   text: string; // the content
   sender: "user" | "ai"; // who sent it
-  isLoading?: boolean;
 }

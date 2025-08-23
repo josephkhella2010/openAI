@@ -7,43 +7,51 @@ import styles from "./homePage.module.css";
 import type { RootState } from "../../store/Store";
 import { useEffect, useRef, useState } from "react";
 import { toast } from "react-toastify";
-
 import { ToastContainer } from "react-toastify";
 import axios from "axios";
-import { setAddMessagesChat } from "../../sliceRedux/ChatMessageSlice";
+import {
+  setAddMessagesChat,
+  setIsLoading,
+} from "../../sliceRedux/ChatMessageSlice";
+import LoadingSection from "./childComponent/LoadingSection";
 
 export default function HomePage() {
-  const { messages } = useSelector((state: RootState) => state.messageStore);
+  const { messages, isLoading } = useSelector(
+    (state: RootState) => state.messageStore
+  );
   const [userSmsInput, setUserSmsInput] = useState<string>("");
   const dispatch = useDispatch();
   const chatContainerRef = useRef<HTMLDivElement | null>(null);
 
   /*  function  */
   async function handleAddUserSms() {
+    const aiData = await getAnswerFromAI();
+
     try {
       if (!userSmsInput) {
         toast.error("please type your question");
         return;
       }
+      dispatch(setIsLoading(true));
+
       dispatch(
         setAddMessagesChat({
           text: userSmsInput,
           sender: "user",
-          isLoading: true,
         })
       );
-      const aiData = await getAnswerFromAI();
       dispatch(
         setAddMessagesChat({
           text: aiData,
           sender: "ai",
-          isLoading: true,
         })
       );
 
       setUserSmsInput("");
     } catch (error) {
       console.log(error);
+    } finally {
+      dispatch(setIsLoading(false));
     }
   }
   /*  */
@@ -62,16 +70,15 @@ export default function HomePage() {
         chatContainerRef.current.scrollHeight;
     }
   }, [messages]);
-  console.log(messages);
+  console.log(messages, isLoading);
   return (
     <div className={styles.HomePageWrapper}>
       <div className={styles.HomePageTop} ref={chatContainerRef}>
         <ToastContainer />
         <TopSection />
         {messages.length < 2 && <StartConversation />}
-        {/*         <AIChatMessages />
-         */}{" "}
         <UserMessage />
+        {isLoading && <LoadingSection />}
       </div>
       <UserInput
         userSmsInput={userSmsInput}

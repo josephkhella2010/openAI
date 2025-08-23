@@ -46,15 +46,16 @@ import { createSlice, type PayloadAction } from "@reduxjs/toolkit";
 import type { MessagesType } from "../helps/interfaceType";
 interface initType {
   messages: MessagesType[];
+  isLoading: boolean;
 }
 const initialState: initType = {
   messages: [
     {
       text: "Hi there! How are you today? How can I help you?",
       sender: "ai",
-      isLoading: false,
     },
   ],
+  isLoading: false,
 };
 
 const ChatMessageSlice = createSlice({
@@ -67,8 +68,12 @@ const ChatMessageSlice = createSlice({
     setAddMessagesChat: (state, action: PayloadAction<MessagesType>) => {
       state.messages.push(action.payload);
     },
+    setIsLoading: (state, action: PayloadAction<boolean>) => {
+      state.isLoading = action.payload;
+    },
   },
 });
 
-export const { setMessagesChat, setAddMessagesChat } = ChatMessageSlice.actions;
+export const { setMessagesChat, setAddMessagesChat, setIsLoading } =
+  ChatMessageSlice.actions;
 export default ChatMessageSlice.reducer;
