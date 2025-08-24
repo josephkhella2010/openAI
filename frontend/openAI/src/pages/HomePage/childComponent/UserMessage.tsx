@@ -20,7 +20,14 @@ export default function UserMessage() {
                   key={index}
                 >
                   <div className={styles.UserMessageSection}>
-                    <img src="/foto/AIChat.png" alt="" />
+                    <img
+                      src={
+                        chat.sender === "ai"
+                          ? "/foto/AIChat.png"
+                          : "/foto/user.png"
+                      }
+                      alt=""
+                    />
                     <p>{chat.text}</p>
                   </div>
                 </div>

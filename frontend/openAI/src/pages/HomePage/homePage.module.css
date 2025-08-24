@@ -1,10 +1,12 @@
 .HomePageWrapper {
   position: relative;
   min-height: 100dvh;
-  background-color: cyan;
+  /*   background-color: cyan;
+ */
 }
 .HomePageTop {
-  background-color: coral;
+  /*   background-color: coral;
+ */
   padding-bottom: 200px; /* 👈 extra space so last message is visible above input */
   overflow: auto;
   height: 100dvh;
@@ -110,19 +112,22 @@
 }
 
 .UserMessageSection img {
-  width: 50px;
-  height: 50px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
+  background-color: rgb(253, 253, 253);
+  padding: 2px;
 }
 .UserMessageSection {
   color: white;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  text-transform: capitalize;
 }
 /*  */
 
 /* user input */
 .UserInputContainer {
-  background-color: blueviolet;
+  background-color: rgb(255, 255, 255);
   padding: 20px;
   display: flex;
   justify-content: center;
@@ -132,25 +137,27 @@
   width: 100%;
 }
 .UserInputSection {
-  background-color: orange;
+  /*   background-color: orange;
+ */
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-around;
 }
 .UserInputSection input {
-  border: none;
+  border: 1px solid black;
   height: 70px;
   width: 60%;
   border-radius: 40px;
   padding: 10px;
+  text-transform: capitalize;
 }
 .UserInputIconContainer {
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 50%;
-  background-color: aliceblue;
+  background-color: rgb(213, 213, 213);
   padding: 10px;
   cursor: pointer;
 }
@@ -162,10 +169,10 @@
   width: 100%;
 }
 .aiBackground {
-  background-color: blue;
+  background-color: rgba(0, 0, 255, 0.896);
 }
 .userBackground {
-  background-color: rgb(192, 10, 10);
+  background-color: rgba(192, 10, 10, 0.832);
 }
 .UserMessageOutContainer {
   width: 100%;
@@ -216,6 +223,21 @@
     transform: translateY(3px);
     background-color: aqua;
   }
+}
+/*  */
+.createNewChatContainer {
+  /*   background-color: chocolate;
+ */
+  padding: 50px 30px;
+}
+.createNewChatContainer button {
+  padding: 12px;
+  background-color: black;
+  color: aliceblue;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 18px;
+  text-transform: capitalize;
 }
 
 /*  */
