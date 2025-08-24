@@ -1,17 +1,18 @@
 {
   "compilerOptions": {
+    "target": "ESNext",
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "module": "ESNext",
     "moduleResolution": "bundler",
     "jsx": "react-jsx",
-    "allowImportingTsExtensions": false,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "strict": true,
-    "module": "ESNext",
-    "target": "ESNext",
-    "isolatedModules": true,
     "resolveJsonModule": true,
-    "noEmit": true
+    "isolatedModules": true,
+    "noEmit": true,
+    "types": ["vite/client", "react", "react-dom"] // ✅ add React types
   },
-  "include": ["src"],
+  "include": ["src", "src/global.d.ts"],
   "exclude": ["node_modules", "dist", "build"]
 }
