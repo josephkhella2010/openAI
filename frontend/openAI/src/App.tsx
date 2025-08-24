@@ -1,4 +1,3 @@
-import "./App.css";
 import RoutePage from "./pages/RoutePage/RoutePage";
 
 function App() {
