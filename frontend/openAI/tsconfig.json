@@ -11,7 +11,7 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "types": ["vite/client", "react", "react-dom"] // ✅ add React types
+    "types": ["vite/client"] // ✅ keep only vite here
   },
   "include": ["src", "src/global.d.ts"],
   "exclude": ["node_modules", "dist", "build"]
