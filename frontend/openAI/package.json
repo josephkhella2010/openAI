@@ -1,14 +1,14 @@
 {
-  "name": "fronetend",
-  "private": true,
-  "version": "0.0.0",
-  "type": "module",
+  "name": "openai",
+  "version": "1.0.0",
+  "description": "This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.",
+  "main": "eslint.config.js",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc -b && vite build",
-    "lint": "eslint .",
-    "preview": "vite preview"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "dependencies": {
     "@reduxjs/toolkit": "^2.8.2",
     "axios": "^1.11.0",
@@ -23,19 +23,13 @@
     "redux-saga": "^1.3.0"
   },
   "devDependencies": {
-    "@eslint/js": "^9.33.0",
     "@types/react": "^19.1.11",
     "@types/react-dom": "^19.1.7",
     "@types/react-redux": "^7.1.34",
     "@types/react-router-dom": "^5.3.3",
     "@types/react-toastify": "^4.0.2",
-    "@vitejs/plugin-react": "^5.0.0",
-    "eslint": "^9.33.0",
-    "eslint-plugin-react-hooks": "^5.2.0",
-    "eslint-plugin-react-refresh": "^0.4.20",
-    "globals": "^16.3.0",
-    "typescript": "~5.8.3",
-    "typescript-eslint": "^8.39.1",
-    "vite": "^7.1.2"
+    "@vitejs/plugin-react": "^5.0.1",
+    "typescript": "^5.9.2",
+    "vite": "^7.1.3"
   }
 }
