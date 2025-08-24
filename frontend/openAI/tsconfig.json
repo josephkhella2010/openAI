@@ -11,7 +11,7 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "types": ["vite/client"] // ✅ keep only vite here
+    "typeRoots": ["./node_modules/@types", "./node_modules/vite/types"]
   },
   "include": ["src", "src/global.d.ts"],
   "exclude": ["node_modules", "dist", "build"]
